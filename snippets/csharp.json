@@ -1,5 +1,5 @@
 {
-    "Unity Class": {
+    "unity-class": {
         "prefix": "u-class",
         "body": [
             "using UnityEngine;",
@@ -15,7 +15,7 @@
         "description": "Unity MonoBehaviour class",
         "isFileTemplate": true
     },
-    "Unity Scriptable Object": {
+    "unity-scriptable-object": {
         "prefix": "u-so",
         "body": [
             "using UnityEngine;",
@@ -29,7 +29,7 @@
         "description": "Unity ScriptableObject",
         "isFileTemplate": true
     },
-    "Class": {
+    "class": {
         "prefix": "cls",
         "body": [
             "using System;",
@@ -44,7 +44,7 @@
         "description": "Modern C# class",
         "isFileTemplate": true
     },
-    "Interface": {
+    "interface": {
         "prefix": "intfc",
         "body": [
             "using System;",
@@ -59,7 +59,7 @@
         "description": "Modern C# interface",
         "isFileTemplate": true
     },
-    "Enum": {
+    "enum": {
         "prefix": "enm",
         "body": [
             "using System;",
@@ -74,7 +74,7 @@
         "description": "Modern C# enum",
         "isFileTemplate": true
     },
-    "Struct": {
+    "struct": {
         "prefix": "stct",
         "body": [
             "using System;",
@@ -89,7 +89,7 @@
         "description": "Modern C# struct",
         "isFileTemplate": true
     },
-    "Abstract Class": {
+    "abstract-class": {
         "prefix": "abscls",
         "body": [
             "using System;",
@@ -104,7 +104,7 @@
         "description": "Modern C# abstract class",
         "isFileTemplate": true
     },
-    "Partial Class": {
+    "partial-class": {
         "prefix": "prtcls",
         "body": [
             "using System;",
@@ -119,7 +119,7 @@
         "description": "Modern C# partial class",
         "isFileTemplate": true
     },
-    "Record": {
+    "record": {
         "prefix": "rcrd",
         "body": [
             "using System;",
@@ -132,7 +132,7 @@
         "description": "Modern C# record",
         "isFileTemplate": true
     },
-    "Legacy Class": {
+    "legacy-class": {
         "prefix": "leg-class",
         "body": [
             "using System;",
@@ -150,7 +150,7 @@
         "description": "Legacy C# class",
         "isFileTemplate": true
     },
-    "Legacy Interface": {
+    "legacy-interface": {
         "prefix": "leg-interface",
         "body": [
             "using System;",
@@ -166,7 +166,7 @@
         "description": "Legacy C# interface",
         "isFileTemplate": true
     },
-    "Legacy Enum": {
+    "legacy-enum": {
         "prefix": "leg-enum",
         "body": [
             "using System;",

@@ -15,7 +15,122 @@
         "commands": [
             {
                 "command": "valeria.createFile",
-                "title": "Create file",
+                "title": "Create new file",
+                "category": "Valeria"
+            },
+            {
+                "command": "valeria.createFile.main",
+                "title": "Create C++ Main",
+                "category": "Valeria"
+            },
+            {
+                "command": "valeria.createFile.class",
+                "title": "Create C++ Class",
+                "category": "Valeria"
+            },
+            {
+                "command": "valeria.createFile.struct",
+                "title": "Create C++ Struct",
+                "category": "Valeria"
+            },
+            {
+                "command": "valeria.createFile.enum",
+                "title": "Create C++ Enum",
+                "category": "Valeria"
+            },
+            {
+                "command": "valeria.createFile.template",
+                "title": "Create C++ Template",
+                "category": "Valeria"
+            },
+            {
+                "command": "valeria.create.csharp.unity-class",
+                "title": "Create Unity Class",
+                "category": "Valeria"
+            },
+            {
+                "command": "valeria.create.csharp.unity-scriptable-object",
+                "title": "Create Unity Scriptable Object",
+                "category": "Valeria"
+            },
+            {
+                "command": "valeria.create.csharp.class",
+                "title": "Create Class",
+                "category": "Valeria"
+            },
+            {
+                "command": "valeria.create.csharp.interface",
+                "title": "Create Interface",
+                "category": "Valeria"
+            },
+            {
+                "command": "valeria.create.csharp.enum",
+                "title": "Create Enum",
+                "category": "Valeria"
+            },
+            {
+                "command": "valeria.create.csharp.struct",
+                "title": "Create Struct",
+                "category": "Valeria"
+            },
+            {
+                "command": "valeria.create.csharp.abstract-class",
+                "title": "Create Abstract Class",
+                "category": "Valeria"
+            },
+            {
+                "command": "valeria.create.csharp.partial-class",
+                "title": "Create Partial Class",
+                "category": "Valeria"
+            },
+            {
+                "command": "valeria.create.csharp.record",
+                "title": "Create Record",
+                "category": "Valeria"
+            },
+            {
+                "command": "valeria.create.csharp.legacy-class",
+                "title": "Create Legacy Class",
+                "category": "Valeria"
+            },
+            {
+                "command": "valeria.create.csharp.legacy-interface",
+                "title": "Create Legacy Interface",
+                "category": "Valeria"
+            },
+            {
+                "command": "valeria.create.csharp.legacy-enum",
+                "title": "Create Legacy Enum",
+                "category": "Valeria"
+            },
+            {
+                "command": "valeria.create.razor.razor-layout",
+                "title": "Create Razor Layout",
+                "category": "Valeria"
+            },
+            {
+                "command": "valeria.create.razor.razor-viewstart",
+                "title": "Create Razor ViewStart",
+                "category": "Valeria"
+            },
+            {
+                "command": "valeria.create.razor.razor-component",
+                "title": "Create Razor Component",
+                "category": "Valeria"
+            },
+            {
+                "command": "valeria.create.razor.razor-page-empty",
+                "title": "Create Razor Page (Empty)",
+                "category": "Valeria"
+            },
+            {
+                "command": "valeria.create.razor.razor-page-separated",
+                "title": "Create Razor Page (Separated)",
+                "category": "Valeria"
+            },
+            {
+                "command": "valeria.create.razor.razor-page-standalone",
+                "title": "Create Razor Page (Standalone)",
                 "category": "Valeria"
             }
         ],
@@ -25,9 +140,113 @@
                     "command": "valeria.createFile",
                     "group": "_file-creation",
                     "when": "explorerResourceIsFolder"
+                },
+                {
+                    "submenu": "valeria.cpp.menu",
+                    "group": "navigation",
+                    "when": "explorerResourceIsFolder"
+                },
+                {
+                    "submenu": "valeria.csharp.menu",
+                    "group": "navigation",
+                    "when": "explorerResourceIsFolder"
+                },
+                {
+                    "submenu": "valeria.razor.menu",
+                    "group": "navigation",
+                    "when": "explorerResourceIsFolder"
+                }
+            ],
+            "valeria.cpp.menu": [
+                {
+                    "command": "valeria.createFile.main"
+                },
+                {
+                    "command": "valeria.createFile.class"
+                },
+                {
+                    "command": "valeria.createFile.struct"
+                },
+                {
+                    "command": "valeria.createFile.enum"
+                },
+                {
+                    "command": "valeria.createFile.template"
+                }
+            ],
+            "valeria.csharp.menu": [
+                {
+                    "command": "valeria.create.csharp.unity-class"
+                },
+                {
+                    "command": "valeria.create.csharp.unity-scriptable-object"
+                },
+                {
+                    "command": "valeria.create.csharp.class"
+                },
+                {
+                    "command": "valeria.create.csharp.interface"
+                },
+                {
+                    "command": "valeria.create.csharp.enum"
+                },
+                {
+                    "command": "valeria.create.csharp.struct"
+                },
+                {
+                    "command": "valeria.create.csharp.abstract-class"
+                },
+                {
+                    "command": "valeria.create.csharp.partial-class"
+                },
+                {
+                    "command": "valeria.create.csharp.record"
+                },
+                {
+                    "command": "valeria.create.csharp.legacy-class"
+                },
+                {
+                    "command": "valeria.create.csharp.legacy-interface"
+                },
+                {
+                    "command": "valeria.create.csharp.legacy-enum"
+                }
+            ],
+            "valeria.razor.menu": [
+                {
+                    "command": "valeria.create.razor.razor-layout"
+                },
+                {
+                    "command": "valeria.create.razor.razor-viewstart"
+                },
+                {
+                    "command": "valeria.create.razor.razor-component"
+                },
+                {
+                    "command": "valeria.create.razor.razor-page-empty"
+                },
+                {
+                    "command": "valeria.create.razor.razor-page-separated"
+                },
+                {
+                    "command": "valeria.create.razor.razor-page-standalone"
                 }
             ]
         },
+        "submenus": [
+            {
+                "id": "valeria.cpp.menu",
+                "label": "Valeria C++"
+            },
+            {
+                "id": "valeria.csharp.menu",
+                "label": "Valeria C#"
+            },
+            {
+                "id": "valeria.razor.menu",
+                "label": "Valeria razor"
+            }
+        ],
         "snippets": [
             {
                 "language": "cpp",
