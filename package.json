@@ -58,10 +58,6 @@
                 "path": "./snippets/python.json"
             },
             {
-                "language": "plaintext",
-                "path": "./snippets/txt.json"
-            },
-            {
                 "language": "typescript",
                 "path": "./snippets/typescript.json"
             },

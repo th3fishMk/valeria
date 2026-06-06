@@ -1,51 +1,51 @@
 import { log } from 'node:console';
-import path from 'node:path';
+import type { Uri } from 'vscode';
 import * as vscode from 'vscode';
-import { Uri } from 'vscode';
 
 export function activate(context: vscode.ExtensionContext) {
     log('Activating extension');
     const createFile = vscode.commands.registerCommand(
         'valeria.createFile',
         async (uri: Uri) => {
-            try {
-                const targetPath: Uri | undefined = uri ?? (await setContext());
-                // if (!uri.fsPath) {
-                //     targetPath = await setContext();
-                // }
-                if (!targetPath) {
-                    log('Process canceled by user');
-                    vscode.window.showInformationMessage('Ok then');
-                    return;
-                } else {
-                    const filename = getName();
-                    filename
-                        .then(async (name) => {
-                            if (!name) {
-                                throw new Error('No given name!');
-                            }
-                            const fullPath = Uri.parse(
-                                path.join(targetPath.fsPath, name),
-                            );
-                            log(fullPath.fsPath);
-                            await createLocalFile(fullPath);
-                        })
-                        .catch((err) => {
-                            if (err instanceof Error) {
-                                vscode.window.showErrorMessage(err.message);
-                                log(err.message);
-                            }
-                        });
-                }
-            } catch (err) {
-                if (err instanceof Error) {
-                    vscode.window.showErrorMessage(err.message);
-                    log(err.message);
-                }
-            }
+            createFileCommand(uri, '');
         },
     );
     context.subscriptions.push(createFile);
+}
+async function createFileCommand(destPath: Uri, template: string) {
+    try {
+        const targetPath: Uri | undefined = destPath ?? (await setContext());
+        // if (!uri.fsPath) {
+        //     targetPath = await setContext();
+        // }
+        if (!targetPath) {
+            log('Process canceled by user');
+            vscode.window.showInformationMessage('Ok then');
+            return;
+        } else {
+            const filename = getName();
+            filename
+                .then(async (name) => {
+                    if (!name) {
+                        throw new Error('No given name!');
+                    }
+                    const fullPath = vscode.Uri.joinPath(targetPath, name);
+                    log(fullPath.fsPath);
+                    await createLocalFile(fullPath, template);
+                })
+                .catch((err) => {
+                    if (err instanceof Error) {
+                        vscode.window.showErrorMessage(err.message);
+                        log(err.message);
+                    }
+                });
+        }
+    } catch (err) {
+        if (err instanceof Error) {
+            vscode.window.showErrorMessage(err.message);
+            log(err.message);
+        }
+    }
 }
 
 async function getName(): Promise<string | undefined> {
