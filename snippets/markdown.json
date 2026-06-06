@@ -1,0 +1,42 @@
+{
+    "markdown-file": {
+        "prefix": "md",
+        "is_file_template": true,
+        "body": ["# $TM_FILENAME_BASE", "$0"],
+        "description": "A blank markdown file."
+    },
+    "markdown-documentation": {
+        "prefix": "md-doc",
+        "is_file_template": true,
+        "body": [
+            "# ${1:Project Title}",
+            "",
+            "## Overview",
+            "$0",
+            "",
+            "## Installation",
+            "```bash",
+            "npm install",
+            "```",
+            "",
+            "## Usage",
+            "- Step 1: Run the app",
+            "- Step 2: Enjoy!"
+        ],
+        "description": "A template for project documentation."
+    },
+    "markdown-changelog": {
+        "prefix": "md-changelog",
+        "is_file_template": true,
+        "body": [
+            "# Changelog",
+            "",
+            "## [${1:1.0.0}] - ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}",
+            "### Added",
+            "- $0",
+            "### Fixed",
+            "- None"
+        ],
+        "description": "A template for a project changelog."
+    }
+}

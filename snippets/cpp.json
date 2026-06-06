@@ -1,0 +1,114 @@
+{
+    "main": {
+        "prefix": "main",
+        "scope": "cpp",
+        "isFileTemplate": true,
+        "body": [
+            "#include <iostream>",
+            "",
+            "using namespace std;",
+            "",
+            "int main()",
+            "{",
+            "\t$0",
+            "\treturn 0;",
+            "}"
+        ],
+        "description": "A main program template."
+    },
+    "class": {
+        "prefix": "cls",
+        "scope": "cpp",
+        "isFileTemplate": true,
+        "body": [
+            "#include <iostream>",
+            "",
+            "using namespace std;",
+            "",
+            "class ${TM_FILENAME_BASE}",
+            "{",
+            "public:",
+            "\t${TM_FILENAME_BASE}();",
+            "\t~${TM_FILENAME_BASE}();",
+            "\t$0",
+            "};",
+            "",
+            "${TM_FILENAME_BASE}::${TM_FILENAME_BASE}()",
+            "{",
+            "\t// Constructor",
+            "}",
+            "",
+            "${TM_FILENAME_BASE}::~${TM_FILENAME_BASE}()",
+            "{",
+            "\t// Destructor",
+            "}"
+        ],
+        "description": "A class template."
+    },
+    "struct": {
+        "prefix": "stct",
+        "scope": "cpp",
+        "isFileTemplate": true,
+        "body": [
+            "#include <iostream>",
+            "",
+            "using namespace std;",
+            "",
+            "struct ${TM_FILENAME_BASE}",
+            "{",
+            "\t$0",
+            "};"
+        ],
+        "description": "A struct template."
+    },
+    "enum": {
+        "prefix": "enm",
+        "scope": "cpp",
+        "isFileTemplate": true,
+        "body": [
+            "#include <iostream>",
+            "",
+            "using namespace std;",
+            "",
+            "enum class ${TM_FILENAME_BASE}",
+            "{",
+            "\t${1:Value1},",
+            "\t${2:Value2},",
+            "\t${3:Value3}",
+            "};"
+        ],
+        "description": "An enum template."
+    },
+    "template": {
+        "prefix": "tmplt",
+        "scope": "cpp",
+        "isFileTemplate": true,
+        "body": [
+            "#include <iostream>",
+            "",
+            "using namespace std;",
+            "",
+            "template <typename T>",
+            "class ${TM_FILENAME_BASE}",
+            "{",
+            "public:",
+            "\t${TM_FILENAME_BASE}();",
+            "\t~${TM_FILENAME_BASE}();",
+            "\t$0",
+            "};",
+            "",
+            "template <typename T>",
+            "${TM_FILENAME_BASE}<T>::${TM_FILENAME_BASE}()",
+            "{",
+            "\t// Constructor",
+            "}",
+            "",
+            "template <typename T>",
+            "${TM_FILENAME_BASE}<T>::~${TM_FILENAME_BASE}()",
+            "{",
+            "\t// Destructor",
+            "}"
+        ],
+        "description": "A template class template."
+    }
+}

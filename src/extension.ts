@@ -4,14 +4,15 @@ import * as vscode from 'vscode';
 import { Uri } from 'vscode';
 
 export function activate(context: vscode.ExtensionContext) {
+    log('Activating extension');
     const createFile = vscode.commands.registerCommand(
         'valeria.createFile',
         async (uri: Uri) => {
             try {
-                let targetPath: Uri | undefined = uri ?? (await setContext());
-                if (!uri.fsPath) {
-                    targetPath = await setContext();
-                }
+                const targetPath: Uri | undefined = uri ?? (await setContext());
+                // if (!uri.fsPath) {
+                //     targetPath = await setContext();
+                // }
                 if (!targetPath) {
                     log('Process canceled by user');
                     vscode.window.showInformationMessage('Ok then');
@@ -19,7 +20,7 @@ export function activate(context: vscode.ExtensionContext) {
                 } else {
                     const filename = getName();
                     filename
-                        .then((name) => {
+                        .then(async (name) => {
                             if (!name) {
                                 throw new Error('No given name!');
                             }
@@ -27,10 +28,11 @@ export function activate(context: vscode.ExtensionContext) {
                                 path.join(targetPath.fsPath, name),
                             );
                             log(fullPath.fsPath);
-                            createLocalFile(fullPath);
+                            await createLocalFile(fullPath);
                         })
                         .catch((err) => {
                             if (err instanceof Error) {
+                                vscode.window.showErrorMessage(err.message);
                                 log(err.message);
                             }
                         });
@@ -66,7 +68,6 @@ async function getName(): Promise<string | undefined> {
             return null;
         },
     });
-
     return fileName;
 }
 
@@ -89,12 +90,20 @@ export async function setContext(): Promise<Uri | undefined> {
     }
 }
 
-function createLocalFile(path: Uri) {
-    const _ = fileExist(path).then((exist) => {
-        if (!exist) {
-            vscode.workspace.fs.writeFile(path, new Uint8Array());
-        }
+export async function createLocalFile(filePath: Uri, snippetName = '') {
+    const fileDoesExist = await fileExist(filePath);
+    if (fileDoesExist) {
+        throw new Error('File already exist');
+    }
+    await vscode.workspace.fs.writeFile(filePath, new Uint8Array());
+
+    const doc = await vscode.workspace.openTextDocument(filePath);
+    await vscode.window.showTextDocument(doc);
+
+    await vscode.commands.executeCommand('editor.action.insertSnippet', {
+        name: snippetName,
     });
+    vscode.window.showInformationMessage('File created successfully');
 }
 
 async function fileExist(uri: Uri): Promise<boolean> {

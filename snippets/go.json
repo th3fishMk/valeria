@@ -1,0 +1,68 @@
+{
+    "go-main": {
+        "prefix": "gomain",
+        "is_file_template": true,
+        "body": [
+            "package main",
+            "",
+            "import \"fmt\"",
+            "",
+            "func main() {",
+            "\tfmt.Println(\"Hello, World!\")",
+            "\t$0",
+            "}"
+        ],
+        "description": "Basic Go entry point template."
+    },
+    "go-package": {
+        "prefix": "gopkg",
+        "is_file_template": true,
+        "body": [
+            "package ${1:packagename}",
+            "",
+            "// ${1:packagename} provides functionalities for...",
+            "$0"
+        ],
+        "description": "Standard Go package file template."
+    },
+    "go-struct": {
+        "prefix": "gostruct",
+        "is_file_template": true,
+        "body": [
+            "package ${1:models}",
+            "",
+            "type ${2:TypeName} struct {",
+            "\t${3:Field} ${4:string} `json:\"${5:field}\"`",
+            "\t$0",
+            "}"
+        ],
+        "description": "Go struct definition template."
+    },
+    "go-test": {
+        "prefix": "gotest",
+        "is_file_template": true,
+        "body": [
+            "package ${1:package_test}",
+            "",
+            "import \"testing\"",
+            "",
+            "func Test${2:FunctionName}(t *testing.T) {",
+            "\t$0",
+            "}"
+        ],
+        "description": "Go unit test template."
+    },
+    "go-interface": {
+        "prefix": "gointerface",
+        "is_file_template": true,
+        "body": [
+            "package ${1:interfaces}",
+            "",
+            "type ${2:InterfaceName} interface {",
+            "\t${3:MethodName}() ${4:error}",
+            "\t$0",
+            "}"
+        ],
+        "description": "Go interface definition template."
+    }
+}

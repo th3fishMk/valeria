@@ -1,0 +1,27 @@
+{
+    "json-file": {
+        "prefix": "json",
+        "is_file_template": true,
+        "body": ["{", "\t$0", "}"],
+        "description": "A blank json file."
+    },
+    "people-list": {
+        "prefix": "people-json",
+        "is_file_template": true,
+        "body": [
+            "{",
+            "\t\"people\": [",
+            "\t\t{",
+            "\t\t\t\"name\": \"John\",",
+            "\t\t\t\"age\": 30",
+            "\t\t},",
+            "\t\t{",
+            "\t\t\t\"name\": \"Jane\",",
+            "\t\t\t\"age\": 25",
+            "\t\t}",
+            "\t]",
+            "}"
+        ],
+        "description": "A file containing a list of people."
+    }
+}

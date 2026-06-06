@@ -1,0 +1,138 @@
+{
+    "python-class": {
+        "prefix": "pyclass",
+        "is_file_template": true,
+        "body": [
+            "",
+            "class $TM_FILENAME_BASE:",
+            "\t\"\"\"",
+            "\t$TM_FILENAME_BASE",
+            "\t\"\"\"",
+            "\tdef __init__(self):",
+            "\t\t${1:pass}"
+        ],
+        "description": "A blueprint for creating objects."
+    },
+    "python-unit-test": {
+        "prefix": "pytest",
+        "is_file_template": true,
+        "body": [
+            "import unittest",
+            "",
+            "class $TM_FILENAME_BASE(unittest.TestCase):",
+            "\tdef setUp(self):",
+            "\t\t${1:pass}",
+            "",
+            "\tdef test_sample(self):",
+            "\t\t\"\"\"",
+            "\t\tThis is a sample test case.",
+            "\t\t\"\"\"",
+            "\t\t# Arrange",
+            "\t\t# Act",
+            "\t\t# Assert",
+            "\t\tself.assertTrue(True)",
+            "",
+            "if __name__ == '__main__':",
+            "\tunittest.main()"
+        ],
+        "description": "Write unit tests for your code."
+    },
+    "python-configuration": {
+        "prefix": "pyconfig",
+        "is_file_template": true,
+        "body": [
+            "# Configuration settings",
+            "",
+            "DATABASE = {",
+            "\t'host': 'localhost',",
+            "\t'port': 5432,",
+            "\t'name': 'my_database',",
+            "\t'user': 'my_user',",
+            "\t'password': 'my_password',",
+            "}",
+            "",
+            "LOGGING = {",
+            "\t'level': 'INFO',",
+            "\t'format': '%(asctime)s - %(levelname)s - %(message)s',",
+            "\t'filename': 'app.log',",
+            "}",
+            "",
+            "API_KEY = 'your_api_key'",
+            "",
+            "$0"
+        ],
+        "description": "Configure your database connection."
+    },
+    "python-data-file": {
+        "prefix": "pydata",
+        "is_file_template": true,
+        "body": [
+            "import json",
+            "",
+            "def read_data(file_path):",
+            "\twith open(file_path, 'r') as f:",
+            "\t\tdata = json.load(f)",
+            "\t\treturn data",
+            "",
+            "def write_data(file_path, data):",
+            "\twith open(file_path, 'w') as f:",
+            "\t\tjson.dump(data, f, indent=4)"
+        ],
+        "description": "Functions for reading and writing data."
+    },
+    "python-constants": {
+        "prefix": "pyconst",
+        "is_file_template": true,
+        "body": [
+            "\"\"\"",
+            "Global constants.",
+            "Use this file to define constant values used throughout your project.",
+            "\"\"\"",
+            "",
+            "E = 2.718281828459",
+            "",
+            "def get_e():",
+            "\treturn E",
+            "$0"
+        ],
+        "description": "A file for storing constants."
+    },
+    "python-exceptions": {
+        "prefix": "pyexc",
+        "is_file_template": true,
+        "body": [
+            "class MyException(Exception):",
+            "\tpass",
+            "",
+            "class AnotherException(Exception):",
+            "\tpass"
+        ],
+        "description": "A file for defining custom exceptions."
+    },
+    "python-script": {
+        "prefix": "pyscript",
+        "is_file_template": true,
+        "body": ["# $TM_FILENAME", "", "print(\"Hello World\")"],
+        "description": "A basic template for running a script."
+    },
+    "python-main": {
+        "prefix": "pymain",
+        "is_file_template": true,
+        "body": [
+            "\"\"\"",
+            "Module-level docstring.",
+            "\"\"\"",
+            "",
+            "def main() -> None:",
+            "\t\"\"\"",
+            "\tThe main function of the program.",
+            "\t\"\"\"",
+            "\t$0",
+            "",
+            "",
+            "if __name__ == '__main__':",
+            "\tmain()"
+        ],
+        "description": "Application entry point template."
+    }
+}

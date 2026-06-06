@@ -1,0 +1,32 @@
+{
+    "class": {
+        "prefix": "class",
+        "is_file_template": true,
+        "body": [
+            "class ${TM_FILENAME_BASE} {",
+            "\tconstructor() {",
+            "\t\t$0",
+            "\t}",
+            "}"
+        ],
+        "description": "A class."
+    },
+    "interface": {
+        "prefix": "interface",
+        "is_file_template": true,
+        "body": ["interface ${TM_FILENAME_BASE} {", "\t$0", "}"],
+        "description": "A interface."
+    },
+    "enum": {
+        "prefix": "enum",
+        "is_file_template": true,
+        "body": [
+            "const ${TM_FILENAME_BASE} = {",
+            "\tVALUE1: 'Value 1',",
+            "\tVALUE2: 'Value 2',",
+            "\tVALUE3: 'Value 3'",
+            "};"
+        ],
+        "description": "A enum."
+    }
+}

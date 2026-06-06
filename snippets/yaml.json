@@ -1,0 +1,7 @@
+{
+    "Yaml File": {
+        "prefix": "yaml",
+        "body": ["$TM_FILENAME_BASE:", "\t$0"],
+        "description": "A blank yaml file."
+    }
+}

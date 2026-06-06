@@ -1,0 +1,31 @@
+{
+    "xml-file": {
+        "prefix": "xml",
+        "is_file_template": true,
+        "body": [
+            "<?xml version=\"1.0\" encoding=\"utf-8\"?>",
+            "<$TM_FILENAME_BASE>",
+            "\t$0",
+            "</$TM_FILENAME_BASE>"
+        ],
+        "description": "A blank xml file."
+    },
+    "people-list-xml": {
+        "prefix": "people-xml",
+        "is_file_template": true,
+        "body": [
+            "<?xml version=\"1.0\" encoding=\"utf-8\"?>",
+            "<people>",
+            "\t<person>",
+            "\t\t<name>John</name>",
+            "\t\t<age>30</age>",
+            "\t</person>",
+            "\t<person>",
+            "\t\t<name>Jane</name>",
+            "\t\t<age>25</age>",
+            "\t</person>",
+            "</people>"
+        ],
+        "description": "A file containing a list of people."
+    }
+}

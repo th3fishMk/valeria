@@ -27,7 +27,57 @@
                     "when": "explorerResourceIsFolder"
                 }
             ]
-        }
+        },
+        "snippets": [
+            {
+                "language": "cpp",
+                "path": "./snippets/cpp.json"
+            },
+            {
+                "language": "csharp",
+                "path": "./snippets/csharp.json"
+            },
+            {
+                "language": "razor",
+                "path": "./snippets/cshtml.json"
+            },
+            {
+                "language": "javascript",
+                "path": "./snippets/javascript.json"
+            },
+            {
+                "language": "json",
+                "path": "./snippets/json.json"
+            },
+            {
+                "language": "markdown",
+                "path": "./snippets/markdown.json"
+            },
+            {
+                "language": "python",
+                "path": "./snippets/python.json"
+            },
+            {
+                "language": "plaintext",
+                "path": "./snippets/txt.json"
+            },
+            {
+                "language": "typescript",
+                "path": "./snippets/typescript.json"
+            },
+            {
+                "language": "xml",
+                "path": "./snippets/xml.json"
+            },
+            {
+                "language": "yaml",
+                "path": "./snippets/yaml.json"
+            },
+            {
+                "language": "go",
+                "path": "./snippets/go.json"
+            }
+        ]
     },
     "scripts": {
         "vscode:prepublish": "pnpm run package",

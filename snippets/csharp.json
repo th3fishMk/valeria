@@ -1,0 +1,185 @@
+{
+    "Unity Class": {
+        "prefix": "u-class",
+        "body": [
+            "using UnityEngine;",
+            "",
+            "public class ${TM_FILENAME_BASE} : MonoBehaviour",
+            "{",
+            "\tprivate void Start()",
+            "\t{",
+            "\t\t$0",
+            "\t}",
+            "}"
+        ],
+        "description": "Unity MonoBehaviour class",
+        "isFileTemplate": true
+    },
+    "Unity Scriptable Object": {
+        "prefix": "u-so",
+        "body": [
+            "using UnityEngine;",
+            "",
+            "[CreateAssetMenu(fileName = \"${TM_FILENAME_BASE}\", menuName = \"ScriptableObjects/${TM_FILENAME_BASE}\")]",
+            "public class ${TM_FILENAME_BASE} : ScriptableObject",
+            "{",
+            "\t$0",
+            "}"
+        ],
+        "description": "Unity ScriptableObject",
+        "isFileTemplate": true
+    },
+    "Class": {
+        "prefix": "cls",
+        "body": [
+            "using System;",
+            "",
+            "namespace ${TM_DIRECTORY/^.*\\\\/([^\\\\/]+)$/$1/};",
+            "",
+            "public class ${TM_FILENAME_BASE}",
+            "{",
+            "\t$0",
+            "}"
+        ],
+        "description": "Modern C# class",
+        "isFileTemplate": true
+    },
+    "Interface": {
+        "prefix": "intfc",
+        "body": [
+            "using System;",
+            "",
+            "namespace ${TM_DIRECTORY/^.*\\\\/([^\\\\/]+)$/$1/};",
+            "",
+            "public interface I${TM_FILENAME_BASE}",
+            "{",
+            "\t$0",
+            "}"
+        ],
+        "description": "Modern C# interface",
+        "isFileTemplate": true
+    },
+    "Enum": {
+        "prefix": "enm",
+        "body": [
+            "using System;",
+            "",
+            "namespace ${TM_DIRECTORY/^.*\\\\/([^\\\\/]+)$/$1/};",
+            "",
+            "public enum ${TM_FILENAME_BASE}",
+            "{",
+            "\t$0",
+            "}"
+        ],
+        "description": "Modern C# enum",
+        "isFileTemplate": true
+    },
+    "Struct": {
+        "prefix": "stct",
+        "body": [
+            "using System;",
+            "",
+            "namespace ${TM_DIRECTORY/^.*\\\\/([^\\\\/]+)$/$1/};",
+            "",
+            "public struct ${TM_FILENAME_BASE}",
+            "{",
+            "\t$0",
+            "}"
+        ],
+        "description": "Modern C# struct",
+        "isFileTemplate": true
+    },
+    "Abstract Class": {
+        "prefix": "abscls",
+        "body": [
+            "using System;",
+            "",
+            "namespace ${TM_DIRECTORY/^.*\\\\/([^\\\\/]+)$/$1/};",
+            "",
+            "public abstract class ${TM_FILENAME_BASE}",
+            "{",
+            "\t$0",
+            "}"
+        ],
+        "description": "Modern C# abstract class",
+        "isFileTemplate": true
+    },
+    "Partial Class": {
+        "prefix": "prtcls",
+        "body": [
+            "using System;",
+            "",
+            "namespace ${TM_DIRECTORY/^.*\\\\/([^\\\\/]+)$/$1/};",
+            "",
+            "public partial class ${TM_FILENAME_BASE}",
+            "{",
+            "\t$0",
+            "}"
+        ],
+        "description": "Modern C# partial class",
+        "isFileTemplate": true
+    },
+    "Record": {
+        "prefix": "rcrd",
+        "body": [
+            "using System;",
+            "",
+            "namespace ${TM_DIRECTORY/^.*\\\\/([^\\\\/]+)$/$1/};",
+            "",
+            "public record ${TM_FILENAME_BASE};",
+            "$0"
+        ],
+        "description": "Modern C# record",
+        "isFileTemplate": true
+    },
+    "Legacy Class": {
+        "prefix": "leg-class",
+        "body": [
+            "using System;",
+            "using System.Collections.Generic;",
+            "using System.Linq;",
+            "",
+            "namespace ${1:Namespace}",
+            "{",
+            "\tpublic class ${TM_FILENAME_BASE}",
+            "\t{",
+            "\t\t$0",
+            "\t}",
+            "}"
+        ],
+        "description": "Legacy C# class",
+        "isFileTemplate": true
+    },
+    "Legacy Interface": {
+        "prefix": "leg-interface",
+        "body": [
+            "using System;",
+            "",
+            "namespace ${1:Namespace}",
+            "{",
+            "\tpublic interface I${TM_FILENAME_BASE}",
+            "\t{",
+            "\t\t$0",
+            "\t}",
+            "}"
+        ],
+        "description": "Legacy C# interface",
+        "isFileTemplate": true
+    },
+    "Legacy Enum": {
+        "prefix": "leg-enum",
+        "body": [
+            "using System;",
+            "",
+            "namespace ${1:Namespace}",
+            "{",
+            "\tpublic enum ${TM_FILENAME_BASE}",
+            "\t{",
+            "\t\t$0",
+            "\t}",
+            "}"
+        ],
+        "description": "Legacy C# enum",
+        "isFileTemplate": true
+    }
+}

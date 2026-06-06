@@ -1,0 +1,123 @@
+{
+    "class": {
+        "prefix": "class",
+        "is_file_template": true,
+        "body": [
+            "/**",
+            " * ${TM_FILENAME_BASE}",
+            " */",
+            "export class ${TM_FILENAME_BASE} {",
+            "\tconstructor() {",
+            "\t\t$0",
+            "\t}",
+            "}"
+        ],
+        "description": "A class that represents a blueprint for creating objects with common properties and behaviors."
+    },
+    "interface": {
+        "prefix": "interface",
+        "is_file_template": true,
+        "body": [
+            "/**",
+            " * ${TM_FILENAME_BASE}: Description of the ${1:InterfaceName}.",
+            " */",
+            "export interface ${1:InterfaceName} {",
+            "\t${2:propertyName}: ${3:string};",
+            "\t$0",
+            "}"
+        ],
+        "description": "An interface that defines a contract for objects to adhere to."
+    },
+    "enum": {
+        "prefix": "enum",
+        "is_file_template": true,
+        "body": [
+            "/**",
+            " * ${TM_FILENAME_BASE}: Description of the ${1:EnumName}.",
+            " */",
+            "export enum ${1:EnumName} {",
+            "\t${2:Value1},",
+            "\t${3:Value2},",
+            "}"
+        ],
+        "description": "An enum that represents a set of named constants."
+    },
+    "type": {
+        "prefix": "type",
+        "is_file_template": true,
+        "body": ["export type ${TM_FILENAME_BASE} = {", "\t$0", "};"],
+        "description": "A type declaration that creates a new name for an existing type."
+    },
+    "abstract-class": {
+        "prefix": "abstract",
+        "is_file_template": true,
+        "body": ["export abstract class ${TM_FILENAME_BASE} {", "\t$0", "}"],
+        "description": "An abstract class that provides a base implementation."
+    },
+    "function": {
+        "prefix": "func",
+        "is_file_template": true,
+        "body": [
+            "/**",
+            " * ${TM_FILENAME_BASE}: Description of the function.",
+            " */",
+            "export function ${1:functionName}(){",
+            "\t$0",
+            "}"
+        ],
+        "description": "A function that encapsulates a block of code to perform a specific task."
+    },
+    "index": {
+        "prefix": "index",
+        "is_file_template": true,
+        "body": ["// ${TM_FILENAME_BASE}", "", "console.log(\"Hello World\");"],
+        "description": "A index file (Hello World)."
+    },
+    "global-constants": {
+        "prefix": "constants",
+        "is_file_template": true,
+        "body": [
+            "/**",
+            " * ${TM_FILENAME_BASE}: Description of the constant.",
+            " * Use this file to define constant values used throughout your project.",
+            " */",
+            "",
+            "export const ${1:SpeedOfLightMs} = ${2:299792458};",
+            "export const ${3:PI} = ${4:3.141592653589};",
+            "export const ${5:E} = ${6:2.718281828459};",
+            "$0"
+        ],
+        "description": "A file that defines global constants used throughout the application."
+    },
+    "tsconfig": {
+        "prefix": "tsconfig",
+        "is_file_template": true,
+        "body": [
+            "{",
+            "\t// Strict compiler options.",
+            "\t\"compilerOptions\": {",
+            "\t\t\"module\": \"commonjs\",",
+            "\t\t\"target\": \"ES2020\",",
+            "\t\t\"outDir\": \"out\",",
+            "\t\t\"sourceMap\": true,",
+            "\t\t\"rootDir\": \"src\",",
+            "\t\t\"strict\": true,",
+            "\t\t\"noImplicitReturns\": true,",
+            "\t\t\"noFallthroughCasesInSwitch\": true,",
+            "\t\t\"noUnusedParameters\": true,",
+            "\t\t\"moduleResolution\": \"node\",",
+            "\t\t\"resolveJsonModule\": true,",
+            "\t\t\"esModuleInterop\": true,",
+            "\t\t\"noUnusedLocals\": true,",
+            "\t\t\"noImplicitAny\": true,",
+            "\t\t\"strictNullChecks\": true,",
+            "\t\t\"noEmitOnError\": true,",
+            "\t\t\"alwaysStrict\": true,",
+            "\t\t\"noImplicitThis\": true,",
+            "\t\t\"noImplicitOverride\": true",
+            "\t}",
+            "}"
+        ],
+        "description": "A set of strict compiler options."
+    }
+}

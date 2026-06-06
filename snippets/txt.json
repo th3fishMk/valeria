@@ -1,0 +1,7 @@
+{
+    "Text File": {
+        "prefix": "txt",
+        "body": ["$0"],
+        "description": "A blank text file."
+    }
+}
