@@ -1,34 +1,4 @@
 {
-    "unity-class": {
-        "prefix": "u-class",
-        "body": [
-            "using UnityEngine;",
-            "",
-            "public class ${TM_FILENAME_BASE} : MonoBehaviour",
-            "{",
-            "\tprivate void Start()",
-            "\t{",
-            "\t\t$0",
-            "\t}",
-            "}"
-        ],
-        "description": "Unity MonoBehaviour class",
-        "isFileTemplate": true
-    },
-    "unity-scriptable-object": {
-        "prefix": "u-so",
-        "body": [
-            "using UnityEngine;",
-            "",
-            "[CreateAssetMenu(fileName = \"${TM_FILENAME_BASE}\", menuName = \"ScriptableObjects/${TM_FILENAME_BASE}\")]",
-            "public class ${TM_FILENAME_BASE} : ScriptableObject",
-            "{",
-            "\t$0",
-            "}"
-        ],
-        "description": "Unity ScriptableObject",
-        "isFileTemplate": true
-    },
     "class": {
         "prefix": "cls",
         "body": [
@@ -131,6 +101,181 @@
         ],
         "description": "Modern C# record",
         "isFileTemplate": true
+    },
+    "unity-class": {
+        "prefix": "u-class",
+        "body": [
+            "using UnityEngine;",
+            "",
+            "public class ${TM_FILENAME_BASE} : MonoBehaviour",
+            "{",
+            "\tprivate void Start()",
+            "\t{",
+            "\t\t$0",
+            "\t}",
+            "}"
+        ],
+        "description": "Unity MonoBehaviour class",
+        "isFileTemplate": true
+    },
+    "unity-monoBehaviour": {
+        "prefix": "monobehaviour",
+        "body": [
+            "using UnityEngine;",
+            "",
+            "public class ${TM_FILENAME_BASE} : MonoBehaviour",
+            "{",
+            "    private void Awake()",
+            "    {",
+            "        $0",
+            "    }",
+            "",
+            "    private void Start()",
+            "    {",
+            "    }",
+            "",
+            "    private void Update()",
+            "    {",
+            "    }",
+            "}"
+        ],
+        "description": "Unity MonoBehaviour template",
+        "isFileTemplate": true
+    },
+    "unity-scriptable-object": {
+        "prefix": "u-so",
+        "body": [
+            "using UnityEngine;",
+            "",
+            "[CreateAssetMenu(fileName = \"${TM_FILENAME_BASE}\", menuName = \"ScriptableObjects/${TM_FILENAME_BASE}\")]",
+            "public class ${TM_FILENAME_BASE} : ScriptableObject",
+            "{",
+            "\t$0",
+            "}"
+        ],
+        "description": "Unity ScriptableObject",
+        "isFileTemplate": true
+    },
+    "unity-monoBehaviour-full": {
+        "prefix": "mono",
+        "body": [
+            "using UnityEngine;",
+            "",
+            "public class ${TM_FILENAME_BASE} : MonoBehaviour",
+            "{",
+            "    [SerializeField] private Transform target;",
+            "",
+            "    private void Awake()",
+            "    {",
+            "    }",
+            "",
+            "    private void OnEnable()",
+            "    {",
+            "    }",
+            "",
+            "    private void Start()",
+            "    {",
+            "    }",
+            "",
+            "    private void Update()",
+            "    {",
+            "        $0",
+            "    }",
+            "",
+            "    private void OnDisable()",
+            "    {",
+            "    }",
+            "",
+            "    private void OnDestroy()",
+            "    {",
+            "    }",
+            "}"
+        ],
+        "description": "Full Unity MonoBehaviour template",
+        "isFileTemplate": true
+    },
+    "unity-singleton": {
+        "isFileTemplate": true,
+        "prefix": "unity-singleton",
+        "body": [
+            "using UnityEngine;",
+            "",
+            "public class ${TM_FILENAME_BASE} : MonoBehaviour",
+            "{",
+            "    public static ${TM_FILENAME_BASE} Instance { get; private set; }",
+            "",
+            "    private void Awake()",
+            "    {",
+            "        if (Instance != null && Instance != this)",
+            "        {",
+            "            Destroy(gameObject);",
+            "            return;",
+            "        }",
+            "",
+            "        Instance = this;",
+            "        DontDestroyOnLoad(gameObject);",
+            "    }",
+            "}"
+        ]
+    },
+    "unity-stateMachineBehaviour": {
+        "isFileTemplate": true,
+        "prefix": "unity-stateMachineBehaviour",
+        "body": [
+            "using UnityEngine;",
+            "",
+            "public class ${TM_FILENAME_BASE} : StateMachineBehaviour",
+            "{",
+            "    public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)",
+            "    {",
+            "    }",
+            "",
+            "    public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)",
+            "    {",
+            "    }",
+            "",
+            "    public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)",
+            "    {",
+            "    }",
+            "}"
+        ]
+    },
+    "unity-editorWindow": {
+        "isFileTemplate": true,
+        "prefix": "unity-editorWindow",
+        "body": [
+            "using UnityEditor;",
+            "using UnityEngine;",
+            "",
+            "public class ${TM_FILENAME_BASE} : EditorWindow",
+            "{",
+            "    [MenuItem(\"Tools/${TM_FILENAME_BASE}\")]",
+            "    public static void ShowWindow()",
+            "    {",
+            "        GetWindow<${TM_FILENAME_BASE}>();",
+            "    }",
+            "",
+            "    private void OnGUI()",
+            "    {",
+            "    }",
+            "}"
+        ]
+    },
+    "unity-customEditor": {
+        "isFileTemplate": true,
+        "prefix": "unity-customEditor",
+        "body": [
+            "using UnityEditor;",
+            "",
+            "[CustomEditor(typeof(${1:TargetType}))]",
+            "public class ${TM_FILENAME_BASE} : Editor",
+            "{",
+            "    public override void OnInspectorGUI()",
+            "    {",
+            "        DrawDefaultInspector();",
+            "    }",
+            "}"
+        ]
     },
     "legacy-class": {
         "prefix": "leg-class",

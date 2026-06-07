@@ -9,48 +9,15 @@
     "categories": [
         "Other"
     ],
-    "activationEvents": [],
+    "activationEvents": [
+        "onStartupFinished"
+    ],
     "main": "./dist/extension.js",
     "contributes": {
         "commands": [
             {
                 "command": "valeria.createFile",
                 "title": "Create new file",
-                "category": "Valeria"
-            },
-            {
-                "command": "valeria.createFile.main",
-                "title": "Create C++ Main",
-                "category": "Valeria"
-            },
-            {
-                "command": "valeria.createFile.class",
-                "title": "Create C++ Class",
-                "category": "Valeria"
-            },
-            {
-                "command": "valeria.createFile.struct",
-                "title": "Create C++ Struct",
-                "category": "Valeria"
-            },
-            {
-                "command": "valeria.createFile.enum",
-                "title": "Create C++ Enum",
-                "category": "Valeria"
-            },
-            {
-                "command": "valeria.createFile.template",
-                "title": "Create C++ Template",
-                "category": "Valeria"
-            },
-            {
-                "command": "valeria.create.csharp.unity-class",
-                "title": "Create Unity Class",
-                "category": "Valeria"
-            },
-            {
-                "command": "valeria.create.csharp.unity-scriptable-object",
-                "title": "Create Unity Scriptable Object",
                 "category": "Valeria"
             },
             {
@@ -89,6 +56,46 @@
                 "category": "Valeria"
             },
             {
+                "command": "valeria.create.csharp.unity-class",
+                "title": "Create Unity Class",
+                "category": "Valeria"
+            },
+            {
+                "command": "valeria.create.csharp.unity-monoBehaviour",
+                "title": "Create Unity MonoBehaviour",
+                "category": "Valeria"
+            },
+            {
+                "command": "valeria.create.csharp.unity-scriptable-object",
+                "title": "Create Unity Scriptable Object",
+                "category": "Valeria"
+            },
+            {
+                "command": "valeria.create.csharp.unity-monoBehaviour-full",
+                "title": "Create Unity MonoBehaviour Full",
+                "category": "Valeria"
+            },
+            {
+                "command": "valeria.create.csharp.unity-singleton",
+                "title": "Create Unity Singleton",
+                "category": "Valeria"
+            },
+            {
+                "command": "valeria.create.csharp.unity-stateMachineBehaviour",
+                "title": "Create Unity State Machine Behaviour",
+                "category": "Valeria"
+            },
+            {
+                "command": "valeria.create.csharp.unity-editorWindow",
+                "title": "Create Unity Editor Window",
+                "category": "Valeria"
+            },
+            {
+                "command": "valeria.create.csharp.unity-customEditor",
+                "title": "Create Unity Custom Editor",
+                "category": "Valeria"
+            },
+            {
                 "command": "valeria.create.csharp.legacy-class",
                 "title": "Create Legacy Class",
                 "category": "Valeria"
@@ -102,149 +109,102 @@
                 "command": "valeria.create.csharp.legacy-enum",
                 "title": "Create Legacy Enum",
                 "category": "Valeria"
-            },
-            {
-                "command": "valeria.create.razor.razor-layout",
-                "title": "Create Razor Layout",
-                "category": "Valeria"
-            },
-            {
-                "command": "valeria.create.razor.razor-viewstart",
-                "title": "Create Razor ViewStart",
-                "category": "Valeria"
-            },
-            {
-                "command": "valeria.create.razor.razor-component",
-                "title": "Create Razor Component",
-                "category": "Valeria"
-            },
-            {
-                "command": "valeria.create.razor.razor-page-empty",
-                "title": "Create Razor Page (Empty)",
-                "category": "Valeria"
-            },
-            {
-                "command": "valeria.create.razor.razor-page-separated",
-                "title": "Create Razor Page (Separated)",
-                "category": "Valeria"
-            },
-            {
-                "command": "valeria.create.razor.razor-page-standalone",
-                "title": "Create Razor Page (Standalone)",
-                "category": "Valeria"
             }
         ],
         "menus": {
             "explorer/context": [
                 {
                     "command": "valeria.createFile",
-                    "group": "_file-creation",
-                    "when": "explorerResourceIsFolder"
-                },
-                {
-                    "submenu": "valeria.cpp.menu",
-                    "group": "navigation",
-                    "when": "explorerResourceIsFolder"
+                    "title": "Create File",
+                    "category": "Valeria",
+                    "group": "valeria"
                 },
                 {
                     "submenu": "valeria.csharp.menu",
-                    "group": "navigation",
+                    "group": "valeria",
                     "when": "explorerResourceIsFolder"
-                },
-                {
-                    "submenu": "valeria.razor.menu",
-                    "group": "navigation",
-                    "when": "explorerResourceIsFolder"
-                }
-            ],
-            "valeria.cpp.menu": [
-                {
-                    "command": "valeria.createFile.main"
-                },
-                {
-                    "command": "valeria.createFile.class"
-                },
-                {
-                    "command": "valeria.createFile.struct"
-                },
-                {
-                    "command": "valeria.createFile.enum"
-                },
-                {
-                    "command": "valeria.createFile.template"
                 }
             ],
             "valeria.csharp.menu": [
                 {
-                    "command": "valeria.create.csharp.unity-class"
+                    "command": "valeria.create.csharp.unity-class",
+                    "group": "_unity"
                 },
                 {
-                    "command": "valeria.create.csharp.unity-scriptable-object"
+                    "command": "valeria.create.csharp.unity-monoBehaviour",
+                    "group": "_unity"
                 },
                 {
-                    "command": "valeria.create.csharp.class"
+                    "command": "valeria.create.csharp.unity-scriptable-object",
+                    "group": "_unity"
                 },
                 {
-                    "command": "valeria.create.csharp.interface"
+                    "command": "valeria.create.csharp.unity-monoBehaviour-full",
+                    "group": "_unity"
                 },
                 {
-                    "command": "valeria.create.csharp.enum"
+                    "command": "valeria.create.csharp.unity-singleton",
+                    "group": "_unity"
                 },
                 {
-                    "command": "valeria.create.csharp.struct"
+                    "command": "valeria.create.csharp.unity-stateMachineBehaviour",
+                    "group": "_unity"
                 },
                 {
-                    "command": "valeria.create.csharp.abstract-class"
+                    "command": "valeria.create.csharp.unity-editorWindow",
+                    "group": "_unity"
                 },
                 {
-                    "command": "valeria.create.csharp.partial-class"
+                    "command": "valeria.create.csharp.unity-customEditor",
+                    "group": "_unity"
                 },
                 {
-                    "command": "valeria.create.csharp.record"
+                    "command": "valeria.create.csharp.class",
+                    "group": "_modern"
                 },
                 {
-                    "command": "valeria.create.csharp.legacy-class"
+                    "command": "valeria.create.csharp.interface",
+                    "group": "_modern"
                 },
                 {
-                    "command": "valeria.create.csharp.legacy-interface"
+                    "command": "valeria.create.csharp.enum",
+                    "group": "_modern"
                 },
                 {
-                    "command": "valeria.create.csharp.legacy-enum"
-                }
-            ],
-            "valeria.razor.menu": [
-                {
-                    "command": "valeria.create.razor.razor-layout"
+                    "command": "valeria.create.csharp.struct",
+                    "group": "_modern"
                 },
                 {
-                    "command": "valeria.create.razor.razor-viewstart"
+                    "command": "valeria.create.csharp.abstract-class",
+                    "group": "_modern"
                 },
                 {
-                    "command": "valeria.create.razor.razor-component"
+                    "command": "valeria.create.csharp.partial-class",
+                    "group": "_modern"
                 },
                 {
-                    "command": "valeria.create.razor.razor-page-empty"
+                    "command": "valeria.create.csharp.record",
+                    "group": "_modern"
+                },
+
+                {
+                    "command": "valeria.create.csharp.legacy-class",
+                    "group": "legacy"
                 },
                 {
-                    "command": "valeria.create.razor.razor-page-separated"
+                    "command": "valeria.create.csharp.legacy-interface",
+                    "group": "legacy"
                 },
                 {
-                    "command": "valeria.create.razor.razor-page-standalone"
+                    "command": "valeria.create.csharp.legacy-enum",
+                    "group": "legacy"
                 }
             ]
         },
         "submenus": [
             {
-                "id": "valeria.cpp.menu",
-                "label": "Valeria C++"
-            },
-            {
                 "id": "valeria.csharp.menu",
                 "label": "Valeria C#"
-            },
-            {
-                "id": "valeria.razor.menu",
-                "label": "Valeria razor"
             }
         ],
         "snippets": [
