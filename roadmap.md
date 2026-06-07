@@ -14,4 +14,4 @@ In order for this extension to work properly it needs:
 
 ## Todo
 
-- [ ] At moment of file creation, when a file name is requested, show the local path and give a suggested name
+- [x] At moment of file creation, when a file name is requested, show the local path and give a suggested name

@@ -50,7 +50,7 @@ export function activate(context: vscode.ExtensionContext) {
         const command = vscode.commands.registerCommand(
             `valeria.create.csharp.${name}`,
             async (uri: vscode.Uri) => {
-                await createFileCommand(uri, name);
+                await createFileCommand(uri, name, 'cs');
             },
         );
         context.subscriptions.push(command);

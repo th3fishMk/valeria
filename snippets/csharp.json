@@ -1,104 +1,43 @@
 {
     "class": {
         "prefix": "cls",
-        "body": [
-            "using System;",
-            "",
-            "namespace ${TM_DIRECTORY/^.*\\\\/([^\\\\/]+)$/$1/};",
-            "",
-            "public class ${TM_FILENAME_BASE}",
-            "{",
-            "\t$0",
-            "}"
-        ],
+        "body": ["public class ${TM_FILENAME_BASE}", "{", "\t$0", "}"],
         "description": "Modern C# class",
         "isFileTemplate": true
     },
     "interface": {
         "prefix": "intfc",
-        "body": [
-            "using System;",
-            "",
-            "namespace ${TM_DIRECTORY/^.*\\\\/([^\\\\/]+)$/$1/};",
-            "",
-            "public interface I${TM_FILENAME_BASE}",
-            "{",
-            "\t$0",
-            "}"
-        ],
+        "body": ["public interface I${TM_FILENAME_BASE}", "{", "\t$0", "}"],
         "description": "Modern C# interface",
         "isFileTemplate": true
     },
     "enum": {
         "prefix": "enm",
-        "body": [
-            "using System;",
-            "",
-            "namespace ${TM_DIRECTORY/^.*\\\\/([^\\\\/]+)$/$1/};",
-            "",
-            "public enum ${TM_FILENAME_BASE}",
-            "{",
-            "\t$0",
-            "}"
-        ],
+        "body": ["public enum ${TM_FILENAME_BASE}", "{", "\t$0", "}"],
         "description": "Modern C# enum",
         "isFileTemplate": true
     },
     "struct": {
         "prefix": "stct",
-        "body": [
-            "using System;",
-            "",
-            "namespace ${TM_DIRECTORY/^.*\\\\/([^\\\\/]+)$/$1/};",
-            "",
-            "public struct ${TM_FILENAME_BASE}",
-            "{",
-            "\t$0",
-            "}"
-        ],
+        "body": ["public struct ${TM_FILENAME_BASE}", "{", "\t$0", "}"],
         "description": "Modern C# struct",
         "isFileTemplate": true
     },
     "abstract-class": {
         "prefix": "abscls",
-        "body": [
-            "using System;",
-            "",
-            "namespace ${TM_DIRECTORY/^.*\\\\/([^\\\\/]+)$/$1/};",
-            "",
-            "public abstract class ${TM_FILENAME_BASE}",
-            "{",
-            "\t$0",
-            "}"
-        ],
+        "body": ["public abstract class ${TM_FILENAME_BASE}", "{", "\t$0", "}"],
         "description": "Modern C# abstract class",
         "isFileTemplate": true
     },
     "partial-class": {
         "prefix": "prtcls",
-        "body": [
-            "using System;",
-            "",
-            "namespace ${TM_DIRECTORY/^.*\\\\/([^\\\\/]+)$/$1/};",
-            "",
-            "public partial class ${TM_FILENAME_BASE}",
-            "{",
-            "\t$0",
-            "}"
-        ],
+        "body": ["public partial class ${TM_FILENAME_BASE}", "{", "\t$0", "}"],
         "description": "Modern C# partial class",
         "isFileTemplate": true
     },
     "record": {
         "prefix": "rcrd",
-        "body": [
-            "using System;",
-            "",
-            "namespace ${TM_DIRECTORY/^.*\\\\/([^\\\\/]+)$/$1/};",
-            "",
-            "public record ${TM_FILENAME_BASE};",
-            "$0"
-        ],
+        "body": ["public record ${TM_FILENAME_BASE};", "$0"],
         "description": "Modern C# record",
         "isFileTemplate": true
     },

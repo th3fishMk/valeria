@@ -1,48 +1,78 @@
-import { log } from 'console';
+import path from 'node:path';
 import type { Uri } from 'vscode';
 import * as vscode from 'vscode';
 
-export async function createFileCommand(destPath: Uri, template: string) {
+export async function createFileCommand(
+    destPath: Uri,
+    template: string,
+    extension = '',
+) {
     try {
         const targetPath: Uri | undefined = destPath ?? (await setContext());
         // if (!uri.fsPath) {
         //     targetPath = await setContext();
         // }
+        const folders = vscode.workspace.workspaceFolders;
+        if (!folders) {
+            return;
+        }
         if (!targetPath) {
-            log('Process canceled by user');
             vscode.window.showInformationMessage('Ok then');
             return;
         } else {
-            const filename = getName();
+            const filename = getName(destPath, template, extension);
+            // biome-ignore lint/style/noNonNullAssertion: previous check ensures this returns a value
+            const originPath = vscode.workspace.getWorkspaceFolder(targetPath)!;
             filename
                 .then(async (name) => {
                     if (!name) {
                         throw new Error('No given name!');
                     }
-                    const fullPath = vscode.Uri.joinPath(targetPath, name);
-                    log(fullPath.fsPath);
+                    const fullPath = vscode.Uri.joinPath(originPath.uri, name);
                     await createLocalFile(fullPath, template);
                 })
                 .catch((err) => {
                     if (err instanceof Error) {
                         vscode.window.showErrorMessage(err.message);
-                        log(err.message);
                     }
                 });
         }
     } catch (err) {
         if (err instanceof Error) {
             vscode.window.showErrorMessage(err.message);
-            log(err.message);
         }
     }
 }
 
-async function getName(): Promise<string | undefined> {
+async function getName(
+    targetPath: Uri,
+    template: string,
+    extension: string,
+): Promise<string | undefined> {
+    let local = vscode.workspace.asRelativePath(targetPath, false);
+    const workspaceFolder = vscode.workspace.getWorkspaceFolder(targetPath);
+    if (workspaceFolder && local === workspaceFolder.uri.fsPath) {
+        local = '.';
+    }
+
+    if (extension === '') {
+        extension = 'txt';
+    }
+
+    let hint = `${template}.${extension}`;
+    if (hint === '.txt') {
+        hint = 'filename.txt';
+    }
+
+    local = path.join(local, hint);
     const fileName = await vscode.window.showInputBox({
         title: 'File name (e.g., file.txt or folder/file.txt)',
+        value: local,
+        valueSelection: [
+            local.length - hint.length,
+            local.length - extension.length - 1,
+        ],
         validateInput: (value: string) => {
-            // REMOVED: / and \ from the invalid list so they can be used as separators
             const invalidChars = /[<>:"|?*]/;
 
             if (invalidChars.test(value)) {
@@ -58,10 +88,12 @@ async function getName(): Promise<string | undefined> {
             return null;
         },
     });
-    return fileName;
+    // biome-ignore lint/style/noNonNullAssertion: <Regex ensures a valid string>
+    const result = path.normalize(fileName!);
+    return result;
 }
+
 export async function setContext(): Promise<Uri | undefined> {
-    log('Entering selection mode');
     const workspaces = vscode.workspace.workspaceFolders;
     if (!workspaces || workspaces.length === 0) {
         throw new Error('Please open a folder to continue!');
