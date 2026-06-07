@@ -2,7 +2,7 @@
     "name": "valeria",
     "displayName": "valeria",
     "description": "Fish tooling for vscode",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "engines": {
         "vscode": "^1.120.0"
     },
@@ -199,7 +199,6 @@
                     "command": "valeria.create.csharp.record",
                     "group": "_modern"
                 },
-
                 {
                     "command": "valeria.create.csharp.legacy-class",
                     "group": "legacy"
