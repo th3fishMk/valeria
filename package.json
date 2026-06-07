@@ -7,12 +7,25 @@
         "vscode": "^1.120.0"
     },
     "categories": [
-        "Other"
+        "Extension Packs",
+        "Snippets"
     ],
     "activationEvents": [
         "onStartupFinished"
     ],
     "main": "./dist/extension.js",
+    "author": {
+        "name": "fish",
+        "email": "th3fishmk@proton.me",
+        "url": "https://github.com/th3fishMk"
+    },
+    "license": "MIT",
+    "repository": {
+        "type": "github",
+        "url": "https://github.com/th3pool/valeria"
+    },
+    "publisher": "th3pool",
+    "icon": "./media/toolkit.png",
     "contributes": {
         "commands": [
             {
