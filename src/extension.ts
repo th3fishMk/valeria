@@ -33,6 +33,7 @@ export function activate(context: vscode.ExtensionContext) {
         'abstract-class',
         'partial-class',
         'record',
+        'global-usings',
         'unity-class',
         'unity-monoBehaviour',
         'unity-scriptable-object',

@@ -69,6 +69,11 @@
                 "category": "Valeria"
             },
             {
+                "command": "valeria.create.csharp.global-usings",
+                "title": "Create Global Usings",
+                "category": "Valeria"
+            },
+            {
                 "command": "valeria.create.csharp.unity-class",
                 "title": "Create Unity Class",
                 "category": "Valeria"
@@ -197,6 +202,10 @@
                 },
                 {
                     "command": "valeria.create.csharp.record",
+                    "group": "_modern"
+                },
+                {
+                    "command": "valeria.create.csharp.global-usings",
                     "group": "_modern"
                 },
                 {
